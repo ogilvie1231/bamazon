@@ -12,8 +12,8 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     // console.log('thread id ' + connection.threadId)
-    readItems();
-    // itemSales();
+    // readItems();
+    itemSales();
     // connection.end();
 });
 
@@ -33,7 +33,7 @@ function readItems() {
 
 function itemSales(item) {
     inquirer.prompt([{
-            name: 'buy',
+            name: 'id',
             type: 'input',
             message: 'what is the id of the item you would like to buy?'
         }, {
@@ -48,13 +48,37 @@ function itemSales(item) {
             }
         }])
         .then(function(answer) {
-            console.log('answer.buy: ' + answer.buy)
-                // connection.query(
-                //     'SELECT * FROM bamazon WHERE item_id=?', [answer.buy],
-                //     function(err, res) {
-                //         if (err) throw err;
-                //         console.log(res)
-                //     })
-        })
+            // console.log('answer.buy: ' + answer.buy)
+
+
+            connection.query(
+                'SELECT * FROM products WHERE item_id=?', [answer.id],
+                function(err, res) {
+                    if (err) throw err;
+                    var qty = answer.quantity;
+                    var id = res[0].item_id - 1;
+                    console.log('answer.quantity: ', answer.quantity)
+                        // console.log('id: ', id)
+                        // console.log('res: ', res[0].item_id)
+                    stockUpdate(id, qty);
+                    // var j = answer.id - 1;
+                    // 'INSTERT INTO products WHERE item_id=?', [j], {
+                    //     stock: res.stock - answer.quantity
+
+                    // }
+                    // console.log('item: ', res[j].stock)
+                    // console.log('answer.quantity: ', answer.quantity)
+                });
+        });
 
 };
+
+function stockUpdate(j, qty) {
+    connection.query(
+        'INSTERT INTO products WHERE item_id=?', [j], {
+            stock: res.stock - qty
+        },
+    )
+    console.log('item: ', res[j].stock);
+    console.log('answer.quantity: ', answer.quantity)
+}
