@@ -12,12 +12,13 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     // console.log('thread id ' + connection.threadId)
-    // readItems();
-    itemSales();
+    readItems(function() {
+        itemSales();
+    });
     // connection.end();
 });
 
-function readItems() {
+function readItems(callback) {
     connection.query('SELECT * FROM products', function(err, res) {
         if (err) throw err;
         for (let i = 0; i < res.length; i++) {
@@ -28,6 +29,7 @@ function readItems() {
             console.log('Stock: ', res[i].stock);
             console.log('\n');
         }
+        callback();
     })
 };
 
@@ -41,44 +43,39 @@ function itemSales(item) {
             type: 'input',
             message: 'how many would you like to buy?',
             validate: function(value) {
-                if (isNaN(value) === false) {
+                if (!isNaN(value)) {
                     return true;
                 }
                 return false;
             }
         }])
         .then(function(answer) {
-            // console.log('answer.buy: ' + answer.buy)
-
-
             connection.query(
                 'SELECT * FROM products WHERE item_id=?', [answer.id],
                 function(err, res) {
                     if (err) throw err;
-                    var qty = answer.quantity;
+                    var requestedQTY = answer.quantity;
                     var id = res[0].item_id - 1;
+                    var stockQTY = res[0].stock;
+                    console.log('answer: ' + answer.id)
                     console.log('answer.quantity: ', answer.quantity)
-                        // console.log('id: ', id)
-                        // console.log('res: ', res[0].item_id)
-                    stockUpdate(id, qty);
-                    // var j = answer.id - 1;
-                    // 'INSTERT INTO products WHERE item_id=?', [j], {
-                    //     stock: res.stock - answer.quantity
-
-                    // }
-                    // console.log('item: ', res[j].stock)
-                    // console.log('answer.quantity: ', answer.quantity)
+                    console.log('stock: ' + stockQTY)
+                    if (requestedQTY <= stockQTY) {
+                        var newQTY = stockQTY - requestedQTY
+                        stockUpdate(answer.id, newQTY)
+                    } else {
+                        console.log('There is not enough inventory to fulfill your order.')
+                    }
                 });
-        });
-
+        })
 };
 
-function stockUpdate(j, qty) {
+function stockUpdate(id, qty) {
     connection.query(
-        'INSTERT INTO products WHERE item_id=?', [j], {
-            stock: res.stock - qty
-        },
-    )
-    console.log('item: ', res[j].stock);
-    console.log('answer.quantity: ', answer.quantity)
-}
+        'UPDATE products SET stock = ? WHERE item_id = ?', [qty, id],
+        function(err) {
+            readItems(function() {
+                itemSales();
+            });
+        });
+};
