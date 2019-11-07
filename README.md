@@ -1,5 +1,6 @@
 
 <h1>Bamazon Database</h1>
+<hr>
 <h3>Technologies Used</h3>
 <ul>
     <li>Node</li>
@@ -8,7 +9,7 @@
     <li>JavaScript</li>
 </ul>
 <h2>Demonstration</h2>
-<h3>Customer </h3>• 
+<h3>Customer </h3>
 <li>Buy Item</li>
 </br>
 
