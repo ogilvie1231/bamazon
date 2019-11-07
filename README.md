@@ -11,7 +11,7 @@
 <strong>Customer functionality</strong>
 ![Customer Service](assets/customer.gif)
 
-<h5>Manager</h5><strong> Add New</strong>
+<h5><strong> Manager</strong>Add New</h5>
 ![Manager add new]
 
 <strong></strong>
