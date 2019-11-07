@@ -8,5 +8,14 @@
     <li>JavaScript</li>
 </ul>
 <h4>Demonstration</h4>
-
+<strong>Customer functionality</strong>
 ![Customer Service](assets/customer.gif)
+
+<h5>Manager</h5><strong> Add New</strong>
+![Manager add new]
+
+<strong></strong>
+
+<strong></strong>
+
+<strong></strong>
