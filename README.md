@@ -10,22 +10,23 @@
 </ul>
 
 <h3>Customer Actions</h3>
-<ol>
+<ul>
 <li>View products</li>
 <li>Make purchase</li>
-</ol>
+</ul>
 
 <h3>Manager Actions</h3>
-<ol>
+<ul>
 <li>View All Inventory</li>
 <li>View Low Inventory</li>
 <li>Update Inventory</li>
 <li>Add new product</li>
 <li>Delete Product</li>
 <li>Exit Program</li>
-</ol>
+</ul>
 
 <h2>Demonstration</h2>
+<h3>Customer</h3>
 
 <li>Buy Item</li>
 </br>
