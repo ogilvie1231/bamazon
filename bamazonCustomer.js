@@ -21,14 +21,7 @@ connection.connect(function(err) {
 function readItems(callback) {
     connection.query('SELECT * FROM products', function(err, res) {
         if (err) throw err;
-        for (let i = 0; i < res.length; i++) {
-            console.log('Item ID: ', res[i].item_id);
-            console.log('Product: ' + res[i].product_name);
-            console.log('Department: ', res[i].department_name);
-            console.log('Price: ', res[i].price);
-            console.log('Stock: ', res[i].stock);
-            console.log('\n');
-        }
+        console.table(res)
         callback();
     })
 };

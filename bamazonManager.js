@@ -1,4 +1,6 @@
+// pulling in mySQL
 var mysql = require('mysql');
+// pulling in
 var inquirer = require('inquirer');
 
 var connection = mysql.createConnection({
@@ -16,7 +18,7 @@ function start() {
         name: 'action',
         message: 'Please select your action',
         type: 'list',
-        choices: ['View Products for Sale', 'View Low Inventory', 'Update inventory', 'Add New Product', 'Exit']
+        choices: ['View Products for Sale', 'View Low Inventory', 'Update inventory', 'Add New Product', 'Delete Product', 'Exit']
     }]).then(function(answer) {
         if (answer.action === 'View Products for Sale') {
 
@@ -42,10 +44,23 @@ function start() {
         } else if (answer.action === 'Add New Product') {
             addNew();
 
+        } else if (answer.action === 'Delete Product') {
+            deleteItem();
+
         } else {
             connection.end();
         }
     });
+}
+
+function display() {
+    connection.query(
+        'SELECT * FROM products',
+        function(err, res) {
+            if (err) throw err;
+            console.table(res)
+                // start();
+        });
 }
 
 function addNew(name, id, department, price, stock) {
@@ -134,10 +149,6 @@ function updateStock() {
                 function(err, res) {
                     if (err) throw err;
                     var newQTY = res[0].stock + parseInt(qtyUpdate)
-                        // console.log('var newQTY = res[0].stock += parseInt(qtyUpdate)')
-                        // console.log('qtyUpdate: ' + qtyUpdate + ' ' + typeof parseInt(qtyUpdate))
-                        // console.log('res[0].stock: ' + res[0].stock + ' ' + typeof res[0].stock)
-                        // console.log('newQTY: ' + newQTY + ' ' + typeof newQTY)
                     newStock(newQTY, id)
 
                 }
@@ -150,14 +161,31 @@ function newStock(newQTY, id) {
         'UPDATE products SET stock = ? WHERE item_id =?', [newQTY, id],
         function(err, res) {
             if (err) throw err;
-
-            // console.log('id: ', id)
-            // console.log('res[0].stock', res[0].stock)
-            // console.log('qtyUpdate: ', qtyUpdate)
-            // console.log('newQTY: ', newQTY)
         }
-
     )
+    start();
+}
 
+function deleteItem() {
+    display();
+    console.log('\n')
+    inquirer.prompt([{
+            type: 'input',
+            message: 'What is the ID of the item you would like to delete?',
+            name: 'idDelete'
+        }])
+        .then(function(ans) {
+
+            deleteQuery(ans.idDelete);
+        })
+}
+
+function deleteQuery(id) {
+    connection.query(
+        'DELETE FROM products WHERE item_id = ?', [id],
+        function(err, res) {
+            if (err) throw err;
+        }
+    )
     start();
 }
