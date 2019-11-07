@@ -9,9 +9,14 @@
 </ul>
 <h4>Demonstration</h4>
 <strong>Customer functionality</strong>
+</br>
+
 ![Customer Service](assets/customer.gif)
 
+
 <strong>Manager </strong>Add New
+</br>
+
 ![Manager add new](assets/manager-add-new.gif)
 
 <strong></strong>
