@@ -8,8 +8,25 @@
     <li>Inquirer</li>
     <li>JavaScript</li>
 </ul>
+
+<h3>Customer Actions</h3>
+<ol>
+<li>View products</li>
+<li>Make purchase</li>
+</ol>
+
+<h3>Manager Actions</h3>
+<ol>
+<li>View All Inventory</li>
+<li>View Low Inventory</li>
+<li>Update Inventory</li>
+<li>Add new product</li>
+<li>Delete Product</li>
+<li>Exit Program</li>
+</ol>
+
 <h2>Demonstration</h2>
-<h3>Customer </h3>
+
 <li>Buy Item</li>
 </br>
 
@@ -36,8 +53,8 @@
 </br>
 
 ![Manager View Low](assets/manager-view-low.gif)
+</br>
 
 <li>View Products</li>
-</br>
 
 ![Manager View All Products](assets/manager-view-products.gif)
