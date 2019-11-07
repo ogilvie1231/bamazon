@@ -1,7 +1,7 @@
 
 <h1>Bamazon Database</h1>
-<hr>
-<h3>Technologies Used</h3>
+
+<h2>Technologies Used</h2>
 <ul>
     <li>Node</li>
     <li>mySQL</li>
@@ -17,13 +17,27 @@
 
 
 <h3>Manager </h3>
-<li> Add New</li>
+<li>Add New</li>
 </br>
 
 ![Manager add new](assets/manager-add-new.gif)
 
-<strong></strong>
+<li>Delete Item</li>
+</br>
 
-<strong></strong>
+![Manager Delete](assets/manager-delete-product.gif)
 
-<strong></strong>
+<li>Update Inventory</li>
+</br>
+
+![Manager Update Inventory](assets/manager-update-inventory.gif)
+
+<li>View Low Inventory</li>
+</br>
+
+![Manager View Low](assets/manager-view-low.gif)
+
+<li>View Products</li>
+</br>
+
+![Manager View All Products](assets/manager-view-products.gif)
