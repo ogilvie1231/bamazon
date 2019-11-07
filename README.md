@@ -7,4 +7,6 @@
     <li>Inquirer</li>
     <li>JavaScript</li>
 </ul>
-<h4 style="text-align: center;">Demonstration</h4>
+<h4>Demonstration</h4>
+
+![Customer Service](assets/customer.gif)
