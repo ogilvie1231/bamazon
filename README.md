@@ -7,14 +7,15 @@
     <li>Inquirer</li>
     <li>JavaScript</li>
 </ul>
-<h4>Demonstration</h4>
-<strong>Customer </strong>• Buy Item
+<h2>Demonstration</h2>
+<h3>Customer </h3>• 
+<li>Buy Item</li>
 </br>
 
 ![Customer Service](assets/customer.gif)
 
 
-<strong>Manager </strong>
+<h3>Manager </h3>
 <li> Add New</li>
 </br>
 
