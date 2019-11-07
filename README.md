@@ -9,13 +9,15 @@
     <li>JavaScript</li>
 </ul>
 
-<h3>Customer Actions</h3>
+<hr>
+
+<h2>Customer Actions</h2>
 <ul>
 <li>View products</li>
 <li>Make purchase</li>
 </ul>
 
-<h3>Manager Actions</h3>
+<h2>Manager Actions</h2>
 <ul>
 <li>View All Inventory</li>
 <li>View Low Inventory</li>
