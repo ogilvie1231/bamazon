@@ -29,8 +29,8 @@
 
 <hr>
 
-<h1>Demonstration</h1>
-<h2>Customer</h2>
+<h2>Demonstration</h2>
+<h3>Customer</h3>
 
 <li>Buy Item</li>
 </br>
@@ -38,7 +38,7 @@
 ![Customer Service](assets/customer.gif)
 
 
-<h2>Manager </h2>
+<h3>Manager </h3>
 <li>Add New</li>
 </br>
 
