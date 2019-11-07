@@ -8,13 +8,14 @@
     <li>JavaScript</li>
 </ul>
 <h4>Demonstration</h4>
-<strong>Customer </strong> • Buy Item
+<strong>Customer </strong>• Buy Item
 </br>
 
 ![Customer Service](assets/customer.gif)
 
 
-<strong>Manager </strong>• Add New
+<strong>Manager </strong>
+<li> Add New</li>
 </br>
 
 ![Manager add new](assets/manager-add-new.gif)
