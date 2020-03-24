@@ -10,7 +10,8 @@
     <li>Inquirer</li>
 </ul>
 
-<p>To install, in the terminal enter "npm install mysql" and "npm install inquirer"</p>
+<h2>Installation</h2>
+<p>In the terminal enter "npm install mysql" and "npm install inquirer"</p>
 
 <h2>Technologies Used</h2>
 <ul>
