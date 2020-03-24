@@ -1,12 +1,15 @@
-
 <h1>Bamazon Database</h1>
 
 <h2>How it works</h2>
 
 <p>Bamazon is a CLI inventory database app. There are two seperate apps within Bamazon. by typing node bamazonCustomer into your terminal you are able to interact as if you were a customer. A list of products and their prices will be displayed. You will be prompted to choose an action as demonstrated below. If you enter node bamazonManger.js into the terminal you will have increased ability to interact with the database.</p>
 
-<h2>Required dependencies:</h2>
-<p>MySQL | Inquirer</p>
+<h2>Required dependencies</h2>
+<ul>
+    <li>MySQL</li>
+    <li>Inquirer</li>
+</ul>
+
 <p>To install, in the terminal enter "npm install mysql" and "npm install inquirer"</p>
 
 <h2>Technologies Used</h2>
@@ -44,7 +47,6 @@
 </br>
 
 ![Customer Service](assets/customer.gif)
-
 
 <h3>Manager </h3>
 <li>Add New</li>
